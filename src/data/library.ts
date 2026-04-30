@@ -10,5 +10,23 @@ function createBook(title: string, author: string, pages: number, read: boolean)
 
 createBook("harry potter", "fjdnf", 122, true);
 createBook("holis", "que tal", 222, false);
+createBook("harry potter", "fjdnf", 122, true);
+createBook("holis", "que tal", 222, false);
+createBook("harry potter", "fjdnf", 122, true);
+createBook("holis", "que tal", 222, false);
+createBook("harry potter", "fjdnf", 122, true);
+createBook("holis", "que tal", 222, false);
+createBook("harry potter", "fjdnf", 122, true);
+createBook("holis", "que tal", 222, false);
+createBook("harry potter", "fjdnf", 122, true);
+createBook("holis", "que tal", 222, false);
+createBook("harry potter", "fjdnf", 122, true);
+createBook("holis", "que tal", 222, false);
+createBook("harry potter", "fjdnf", 122, true);
+createBook("holis", "que tal", 222, false);
+createBook("harry potter", "fjdnf", 122, true);
+createBook("holis", "que tal", 222, false);
+createBook("harry potter", "fjdnf", 122, true);
+createBook("holis", "que tal", 222, false);
 
 export {library, createBook};

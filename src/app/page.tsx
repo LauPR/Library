@@ -8,10 +8,10 @@ export default function Home() {
   return (
     <div className="text-text-primary">
 
-      <main className="bg-bg-primary h-screen">
+      <main className="bg-bg-primary h-full cursor-default">
 
         <Header/>
-        <Button text={"default button"}/>
+        <Button text={"Add Book"}/>
         <BookList books={library}/>
 
       </main>

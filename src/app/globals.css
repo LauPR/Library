@@ -8,7 +8,7 @@
   --accent-primary: #2D6A8F;
   --accent-secondary: #C2765B;
   --border-subtle: #D6D4CE;
-  --highlight: #D9A43B;
+  --shadow: #E3E8ED;
 }
 
 @theme inline {
@@ -19,7 +19,7 @@
   --color-accent-primary: var(--accent-primary);
   --color-accent-secondary: var(--accent-secondary);
   --color-border-subtle: var(--border-subtle);
-  --color-highlight: var(--highlight);
+  --color-shadow: var(--shadow);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -34,7 +34,7 @@
     --accent-primary: #5D9EC3;
     --accent-secondary: #6B9A8A;
     --border-subtle: #4A4A4A;
-    --highlight: #C87D5B;
+    --shadow: #000000;
   }
 }
 
