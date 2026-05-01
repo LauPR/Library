@@ -5,19 +5,19 @@ interface Props {
     books: Book[];
 }
 
-export default function BookList({books} : Props){
-    return(
-        <div 
-        className="
+export default function BookList({ books }: Props) {
+    return (
+        <div
+            className="
             mx-6
             p-3
             grid
-            grid-cols-4
+            grid-cols-[repeat(auto-fill,minmax(250px,1fr))]
             gap-3
         ">
 
             {books.map(book => (
-                <BookCard key={book.id} book={book}/>
+                <BookCard key={book.id} book={book} />
             ))}
 
         </div>
