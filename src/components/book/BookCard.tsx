@@ -16,7 +16,7 @@ export default function BookCard({book} : Props){
             border 
             border-border-subtle 
             hover:border-accent-primary
-            shadow
+            shadow-md
             shadow-shadow
             rounded-2xl
         ">

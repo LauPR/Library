@@ -1,4 +1,5 @@
 import Button from "./Button";
+import {X} from 'lucide-react';
 
 interface Props {
     children: React.ReactNode;
@@ -15,8 +16,7 @@ export default function Modal({ children, isOpen, onClose }: Props) {
             className="
                 fixed 
                 inset-0
-                bg-bg-primary
-                bg-opacity-50 
+                bg-bg-primary/70
                 flex 
                 justify-center 
                 items-center 
@@ -25,13 +25,17 @@ export default function Modal({ children, isOpen, onClose }: Props) {
             <div
                 className="
                     bg-bg-secondary 
+                    border
+                    border-border-subtle
+                    shadow-lg
+                    shadow-bg-primary
                     rounded-lg 
                     p-6 
                     relative"
                 onClick={(e) => e.stopPropagation()}
                 
             >
-                <Button text={"vklfejl"} onClick={onClose} />
+                <Button icon={<X />} onClick={onClose} variant="danger" className="absolute top-2 right-2 p-1 rounded-full" />
                 {children}
             </div>
         </div>

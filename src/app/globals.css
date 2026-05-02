@@ -3,17 +3,23 @@
 :root {
   --bg-primary: #F9F9F8;
   --bg-secondary: #F0F0EC;
+  --danger: #C25B4A;
+  --danger-hover: #A83C2A;
+  --text-danger: #FFFFFF;
   --text-primary: #1E1E1C;
   --text-secondary: #5A5A55;
   --accent-primary: #2D6A8F;
   --accent-secondary: #C2765B;
   --border-subtle: #D6D4CE;
-  --shadow: #E3E8ED;
+  --shadow: #E8E7E2;
 }
 
 @theme inline {
   --color-bg-primary: var(--bg-primary);
   --color-bg-secondary: var(--bg-secondary);
+  --color-danger: var(--danger);
+  --color-danger-hover: var(--danger-hover);
+  --color-text-danger: var(--text-danger);  
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
   --color-accent-primary: var(--accent-primary);
@@ -29,12 +35,15 @@
   :root {
     --bg-primary: #121212;
     --bg-secondary: #1F1F1F;
+    --danger: #8B3A3A;
+    --danger-hover: #A84545;
+    --text-danger: #F0F0F0;
     --text-primary: #F0F0F0;
     --text-secondary: #A5A5A5;
     --accent-primary: #5D9EC3;
     --accent-secondary: #6B9A8A;
     --border-subtle: #4A4A4A;
-    --shadow: #000000;
+    --shadow: #101010;
   }
 }
 

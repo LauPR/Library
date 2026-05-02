@@ -1,24 +1,38 @@
+import { cn } from "@/lib/utils";
+
 type Props = {
-    text: string;
+    text?: string;
+    icon?: React.ReactNode;
+    variant?: 'primary' | 'danger';
     onClick?: () => void;
+    className?: string;
 }
 
-export default function Button({ text, onClick }: Props) {
+export default function Button({ text, icon, variant = 'primary', onClick, className }: Props) {
+
+    const variants = {
+            primary: "bg-accent-primary hover:bg-accent-secondary active:shadow-none",
+            danger: "bg-danger hover:bg-danger-hover text-text-danger active:shadow-none"
+    };
+
     return (
         <button
-            className="
-            bg-accent-primary 
-            hover:bg-accent-secondary
-            shadow-2xs
-            shadow-shadow
-            rounded-2xl
-            p-2 
-            m-2 
-            cursor-pointer
-        "
-        onClick={onClick}
+            className={
+                cn(
+                    "shadow-md",
+                    "shadow-shadow",
+                    "rounded-2xl",
+                    "p-2",
+                    "m-2",
+                    "cursor-pointer",
+                    variants[variant],
+                    className
+                )
+            }
+            onClick={onClick}
         >
             {text}
+            {icon}
         </button>
     )
 }

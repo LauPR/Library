@@ -16,62 +16,91 @@ export default function ({ isOpen, onClose }: Props) {
                         bg-bg-secondary
                         flex 
                         flex-col
+                        p-3
+                        space-y-4
                     ">
 
-                    <div>
+                    <div className="space-x-2">
                         <label htmlFor="title">
                             Book title:
                         </label>
                         <input
                             id="title"
                             type="text"
-                            placeholder="Jane Eyre"
+                            placeholder=" ''Jane Eyre'' "
                             name="title"
+                            className="
+                                px-3
+                                border
+                                border-transparent
+                                rounded-2xl
+                                focus:outline-none 
+                                focus:border-accent-primary
+                            "
                         />
                     </div>
 
-                    <div>
+                    <div className="space-x-2">
                         <label htmlFor="author">
                             Author's name:
                         </label>
                         <input
                             id="author"
                             type="text"
-                            placeholder="Edgar Allan Poe"
-                            name="author" />
+                            placeholder=" ''Edgar Allan Poe'' "
+                            name="author" 
+                            className="
+                                px-3
+                                border
+                                border-transparent
+                                rounded-2xl
+                                focus:outline-none 
+                                focus:border-accent-primary
+                            "
+                            />
                     </div>
 
-                    <div>
+                    <div className="space-x-2">
                         <label htmlFor="title">
                             Number of pages:
                         </label>
                         <input
                             id="pages"
                             type="text"
-                            placeholder="324"
-                            name="pages" />
+                            placeholder=" ''324'' "
+                            name="pages" 
+                            className="
+                                px-3
+                                border
+                                border-transparent
+                                rounded-2xl
+                                focus:outline-none 
+                                focus:border-accent-primary
+                            "
+                            />
                     </div>
 
                     <div>
-                        <fieldset>
+                        <fieldset className="flex gap-2">
 
                             <legend>Did you read the book?</legend>
 
-                            <label htmlFor="title">
-                                Yes
-                            </label>
                             <input
                                 id="read"
                                 type="radio"
-                                name="read" />
-
-                            <label htmlFor="title">
-                                No
+                                name="read" 
+                                />
+                            <label htmlFor="title" className="mr-5">
+                                Yes
                             </label>
+
                             <input
                                 id="unread"
                                 type="radio"
                                 name="read" />
+                            <label htmlFor="title">
+                                No
+                            </label>
 
                         </fieldset>
                     </div>
