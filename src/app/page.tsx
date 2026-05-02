@@ -13,12 +13,12 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   return (
-    <div className="text-text-primary">
+    <div className="text-text-primary min-h-screen bg-bg-primary cursor-default">
 
-      <main className="bg-bg-primary h-full cursor-default">
+      <main>
 
         <Header />
-        <Button text={"Add Book"} onClick={() => setIsModalOpen(true)}/>
+        <Button text={"Add Book"} onClick={() => setIsModalOpen(true)} className="mx-auto block mt-4"/>
         <BookForm isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}/>
         <BookList books={library} />
 

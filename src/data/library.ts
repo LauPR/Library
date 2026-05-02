@@ -17,16 +17,6 @@ createBook("holis", "que tal", 222, false);
 createBook("harry potter", "fjdnf", 122, true);
 createBook("holis", "que tal", 222, false);
 createBook("harry potter", "fjdnf", 122, true);
-createBook("holis", "que tal", 222, false);
-createBook("harry potter", "fjdnf", 122, true);
-createBook("holis", "que tal", 222, false);
-createBook("harry potter", "fjdnf", 122, true);
-createBook("holis", "que tal", 222, false);
-createBook("harry potter", "fjdnf", 122, true);
-createBook("holis", "que tal", 222, false);
-createBook("harry potter", "fjdnf", 122, true);
-createBook("holis", "que tal", 222, false);
-createBook("harry potter", "fjdnf", 122, true);
-createBook("holis", "que tal", 222, false);
+
 
 export {library, createBook};
