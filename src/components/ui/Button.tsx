@@ -6,15 +6,27 @@ type Props = {
     icon?: React.ReactNode;
     variant?: 'primary' | 'danger';
     onClick?: () => void;
+    onDelete?: () => void;
     className?: string;
 }
 
-export default function Button({ text, type = 'button', icon, variant = 'primary', onClick, className }: Props) {
+export default function Button({
+    text, type = 'button', icon, variant = 'primary', onClick, onDelete, className
+}: Props) {
 
     const variants = {
-            primary: "bg-accent-primary hover:bg-accent-secondary active:shadow-none",
-            danger: "bg-danger hover:bg-danger-hover text-text-danger active:shadow-none"
+        primary: "bg-accent-primary hover:bg-accent-secondary active:shadow-none",
+        danger: "bg-danger hover:bg-danger-hover text-text-danger active:shadow-none"
     };
+
+    const handleClick = () => {
+        if (onDelete) {
+            onDelete();
+        }
+        else if (onClick) {
+            onClick();
+        }
+    }
 
     return (
         <button
@@ -30,7 +42,7 @@ export default function Button({ text, type = 'button', icon, variant = 'primary
                     className
                 )
             }
-            onClick={onClick}
+            onClick={handleClick}
             type={type}
         >
             {text}

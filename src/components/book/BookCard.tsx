@@ -1,10 +1,13 @@
 import Book from "@/lib/Book";
+import Button from "../ui/Button";
+import { Trash2 } from "lucide-react";
 
 interface Props{
     book: Book;
+    onDeleteBook: (id: number | string) => void;
 }
 
-export default function BookCard({book} : Props){
+export default function BookCard({book, onDeleteBook} : Props){
     return(
         <div 
         className="
@@ -43,6 +46,8 @@ export default function BookCard({book} : Props){
                     {` ${book.read ? "Yes" : "No"}`}
                 </span>
             </p>
+
+            <Button onDelete={() => onDeleteBook(book.id)} variant="danger" icon={<Trash2/>} className=""/>
 
         </div>
     )

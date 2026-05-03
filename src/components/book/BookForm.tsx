@@ -3,14 +3,15 @@
 import { SyntheticEvent, useState } from "react";
 import Button from "../ui/Button";
 import Modal from "../ui/Modal";
-import { createBook } from "@/data/library";
+import Book from "@/lib/Book";
 
 interface Props {
     isOpen: boolean;
     onClose: () => void;
+    onAddBook: (book: Book) => void;
 }
 
-export default function ({ isOpen, onClose }: Props) {
+export default function ({ isOpen, onClose, onAddBook }: Props) {
     const [title, setTitle] = useState <string>('');
     const [author, setAuthor] = useState<string>('');
     const [pages, setPages] = useState<string>('');
@@ -24,7 +25,9 @@ export default function ({ isOpen, onClose }: Props) {
             return;
         }
 
-        createBook(title.trim(), author.trim(), parseInt(pages), read);
+        const newBook = new Book(title.trim(), author.trim(), parseInt(pages), read);
+
+        onAddBook(newBook);
 
         setTitle('');
         setAuthor('');
@@ -148,7 +151,7 @@ export default function ({ isOpen, onClose }: Props) {
                         </fieldset>
                     </div>
 
-                    <Button text="Save" type="submit"/>
+                    <Button text="Save" type="submit" />
 
                 </form >
             </Modal>
