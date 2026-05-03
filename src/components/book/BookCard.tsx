@@ -38,9 +38,9 @@ export default function BookCard({book} : Props){
                 </span>
             </p>
 
-            <p>State: 
+            <p>Read: 
                 <span className="text-text-primary">
-                    {" " + book.read ? "read" : "unread"}
+                    {` ${book.read ? "Yes" : "No"}`}
                 </span>
             </p>
 
