@@ -1,5 +1,5 @@
 import Button from "./Button";
-import {X} from 'lucide-react';
+import { X } from 'lucide-react';
 
 interface Props {
     children: React.ReactNode;
@@ -33,9 +33,14 @@ export default function Modal({ children, isOpen, onClose }: Props) {
                     p-6 
                     relative"
                 onClick={(e) => e.stopPropagation()}
-                
+
             >
-                <Button icon={<X />} onClick={onClose} variant="danger" className="absolute top-2 right-2 p-1 rounded-full" />
+                <Button
+                    icon={<X />}
+                    onClick={onClose}
+                    variant="danger"
+                    className="absolute top-2 right-2 p-1 rounded-full"
+                />
                 {children}
             </div>
         </div>

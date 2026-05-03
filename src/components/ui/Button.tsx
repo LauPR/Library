@@ -2,13 +2,14 @@ import { cn } from "@/lib/utils";
 
 type Props = {
     text?: string;
+    type?: 'submit' | 'reset' | 'button';
     icon?: React.ReactNode;
     variant?: 'primary' | 'danger';
     onClick?: () => void;
     className?: string;
 }
 
-export default function Button({ text, icon, variant = 'primary', onClick, className }: Props) {
+export default function Button({ text, type = 'button', icon, variant = 'primary', onClick, className }: Props) {
 
     const variants = {
             primary: "bg-accent-primary hover:bg-accent-secondary active:shadow-none",
@@ -30,6 +31,7 @@ export default function Button({ text, icon, variant = 'primary', onClick, class
                 )
             }
             onClick={onClick}
+            type={type}
         >
             {text}
             {icon}

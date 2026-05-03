@@ -1,5 +1,9 @@
+'use client'
+
+import { SyntheticEvent, useState } from "react";
 import Button from "../ui/Button";
 import Modal from "../ui/Modal";
+import { createBook } from "@/data/library";
 
 interface Props {
     isOpen: boolean;
@@ -7,6 +11,29 @@ interface Props {
 }
 
 export default function ({ isOpen, onClose }: Props) {
+    const [title, setTitle] = useState <string>('');
+    const [author, setAuthor] = useState<string>('');
+    const [pages, setPages] = useState<string>('');
+    const [read, setRead] = useState<boolean>(false);
+
+    const handleSubmit = (e: SyntheticEvent) => {
+        e.preventDefault();
+
+        if(!title.trim() || !author.trim() || !pages.trim()){
+            alert("Complete the form, please.");
+            return;
+        }
+
+        createBook(title.trim(), author.trim(), parseInt(pages), read);
+
+        setTitle('');
+        setAuthor('');
+        setPages('');
+        setRead(false);
+
+        onClose();
+    }
+
     return (
         <div>
 
@@ -18,7 +45,9 @@ export default function ({ isOpen, onClose }: Props) {
                         flex-col
                         p-3
                         space-y-4
-                    ">
+                    "
+                    onSubmit={handleSubmit}
+                    >
 
                     <div className="space-x-2">
                         <label htmlFor="title">
@@ -29,6 +58,9 @@ export default function ({ isOpen, onClose }: Props) {
                             type="text"
                             placeholder=" ''Jane Eyre'' "
                             name="title"
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                            required
                             className="
                                 px-3
                                 border
@@ -49,6 +81,9 @@ export default function ({ isOpen, onClose }: Props) {
                             type="text"
                             placeholder=" ''Edgar Allan Poe'' "
                             name="author" 
+                            value={author}
+                            onChange={(e) => setAuthor(e.target.value)}
+                            required
                             className="
                                 px-3
                                 border
@@ -68,7 +103,10 @@ export default function ({ isOpen, onClose }: Props) {
                             id="pages"
                             type="text"
                             placeholder=" ''324'' "
-                            name="pages" 
+                            name="pages"
+                            value={pages}
+                            onChange={(e) => setPages(e.target.value)}
+                            required 
                             className="
                                 px-3
                                 border
@@ -89,23 +127,28 @@ export default function ({ isOpen, onClose }: Props) {
                                 id="read"
                                 type="radio"
                                 name="read" 
+                                onChange={() => setRead(true)}
+                                checked={read === true}
                                 />
-                            <label htmlFor="title" className="mr-5">
+                            <label htmlFor="read" className="mr-5">
                                 Yes
                             </label>
 
                             <input
                                 id="unread"
                                 type="radio"
-                                name="read" />
-                            <label htmlFor="title">
+                                name="read" 
+                                onChange={() => setRead(false)}
+                                checked={read === false}
+                                />
+                            <label htmlFor="unread">
                                 No
                             </label>
 
                         </fieldset>
                     </div>
 
-                    <Button text="Save" />
+                    <Button text="Save" type="submit"/>
 
                 </form >
             </Modal>
