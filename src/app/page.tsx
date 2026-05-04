@@ -22,6 +22,12 @@ export default function Home() {
     setBooks(prev => [...prev, newBook]);
   }
 
+  const handleToggleRead = (id: number | string) => {
+    setBooks(prev => prev.map(book =>
+      book.id === id ? { ...book, read: !book.read } : book
+    ));
+  }
+
   return (
     <div className="text-text-primary min-h-screen bg-bg-primary cursor-default">
 
@@ -44,7 +50,10 @@ export default function Home() {
         {/* book list */}
         <BookList
           books={books}
-          onDeleteBook={handleDeleteBook} />
+          onDeleteBook={handleDeleteBook}
+          onToggleRead={handleToggleRead}
+
+        />
 
       </main>
 

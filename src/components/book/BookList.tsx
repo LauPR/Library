@@ -3,10 +3,11 @@ import BookCard from "./BookCard"
 
 interface Props {
     books: Book[];
-    onDeleteBook: (id : number | string) => void;
+    onDeleteBook: (id: number | string) => void;
+    onToggleRead: (id: number | string) => void;
 }
 
-export default function BookList({ books, onDeleteBook }: Props) {
+export default function BookList({ books, onDeleteBook, onToggleRead }: Props) {
     return (
         <div
             className="
@@ -18,7 +19,7 @@ export default function BookList({ books, onDeleteBook }: Props) {
         ">
 
             {books.map(book => (
-                <BookCard key={book.id} book={book} onDeleteBook={onDeleteBook}/>
+                <BookCard key={book.id} book={book} onDeleteBook={onDeleteBook} onToggleRead={onToggleRead}/>
             ))}
 
         </div>

@@ -13,11 +13,6 @@ class Book {
         this.read = read;
     }
 
-    info(): string{
-        return (
-            `"${this.title}" by ${this.author}, ${this.pages} pages, ${this.read ? 'read' : 'unread'}`
-        )
-    }
 }
 
 export default Book;

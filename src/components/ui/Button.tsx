@@ -32,6 +32,8 @@ export default function Button({
         <button
             className={
                 cn(
+                    "text-text-primary",
+                    "text-center",
                     "shadow-md",
                     "shadow-shadow",
                     "rounded-2xl",
