@@ -15,10 +15,13 @@ export default function BookCard({ book, onDeleteBook, onToggleRead }: Props) {
     return (
         <div
             className="
+            relative
+            flex 
+            flex-col
             bg-bg-secondary 
-            py-3
-            px-6
-            text-xl
+            max-h-64
+            min-h-60
+            p-4 
             text-text-secondary
             border 
             border-border-subtle 
@@ -27,32 +30,43 @@ export default function BookCard({ book, onDeleteBook, onToggleRead }: Props) {
             shadow-shadow
             rounded-2xl
         ">
-            <h2 className="text-accent-primary text-2xl">Title:
-                <span className="text-text-primary">
-                    {" " + book.title}
-                </span>
-            </h2>
+            <Button onDelete={() => onDeleteBook(book.id)} variant="danger" icon={<Trash2 />} className="absolute top-0 right-0" />
 
-            <p>Author:
-                <span className="text-text-primary">
-                    {" " + book.author}
-                </span>
-            </p>
+            <div
+                className="
+                flex-1 
+                overflow-y-hidden 
+                hover:overflow-y-auto
+                wrap-break-word 
+                space-y-2 
+                mb-3
+            ">
+                <h2 className="text-accent-primary text-xl">Title:
+                    <span className="text-text-primary">
+                        {" " + book.title}
+                    </span>
+                </h2>
 
-            <p>Pages:
-                <span className="text-text-primary">
-                    {" " + book.pages}
-                </span>
-            </p>
+                <p>Author:
+                    <span className="text-text-primary">
+                        {" " + book.author}
+                    </span>
+                </p>
 
-            <p>Read:
-                <span className="text-text-primary">
-                    {` ${book.read ? "Yes" : "No"}`}
-                </span>
-            </p>
+                <p>Pages:
+                    <span className="text-text-primary">
+                        {" " + book.pages}
+                    </span>
+                </p>
 
-            <Button onDelete={() => onDeleteBook(book.id)} variant="danger" icon={<Trash2 />} />
-            <Button onClick={() => onToggleRead(book.id)} text={`Mark as ${book.read ? "Unread" : "Read"}`}/>
+                <p>Read:
+                    <span className="text-text-primary">
+                        {` ${book.read ? "Yes" : "No"}`}
+                    </span>
+                </p>
+            </div>
+
+            <Button onClick={() => onToggleRead(book.id)} text={`Mark as ${book.read ? "Unread" : "Read"}`} className="w-36 mt-auto ml-auto"/>
         </div>
     )
 }
